@@ -1,0 +1,67 @@
+<mat-form-field class="example-chip-list" appearance="fill">
+  <mat-label>Белый спиок стран</mat-label>
+  <mat-chip-list #chipList aria-label="Fruit selection">
+    <mat-chip
+      *ngFor="let country of allSite.searchCountry"
+      (removed)="remove(country)">
+      {{country}}
+      <button matChipRemove>
+        <mat-icon>cancel</mat-icon>
+      </button>
+    </mat-chip>
+    <input
+      placeholder="Страна..."
+      #fruitInput
+      [formControl]="fruitCtrl"
+      [matAutocomplete]="auto"
+      [matChipInputFor]="chipList"
+      [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+      (matChipInputTokenEnd)="add($event)">
+  </mat-chip-list>
+  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+    <mat-option *ngFor="let fruit of filteredFruits | async" [value]="fruit">
+      {{fruit}}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
+
+
+
+<div class="yearSearchDiv">
+  <div class="divYearInput">
+
+    <mat-form-field appearance="fill">
+      <mat-label>ОТ</mat-label>
+      <input matInput type="number" max="9999" min="-9999" maxlength="5" (focusout)="minInput()" (input)="minInput()" [(ngModel)]="yearMin">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>ДО</mat-label>
+      <input matInput type="number" (focusout)="maxInput()" max="9999" min="-9999" maxlength="5" (input)="maxInput()" [(ngModel)]="yearMax">
+    </mat-form-field>
+
+  </div>
+  <div class="divYearSlider">
+    <div class="slider1">
+      <mat-slider class="sl1"
+        vertical="true"
+        [(ngModel)]="valueSliderOne"
+        [min]="MinSlider1"
+        [max]="MaxSlider1"
+        (change)="slider1()"
+        ></mat-slider>
+      </div>
+
+      <div class="slider2"> 
+        <mat-slider class="sl2"
+        invert="invert"
+        [(ngModel)]="yearMax"
+        [min]="MinSlider2"
+        [max]="MaxSlider2"
+        vertical="true"
+        (change)="slider2()"
+        ></mat-slider>
+      </div>
+
+  </div>
+
+</div>

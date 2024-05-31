@@ -1,0 +1,17 @@
+input {
+    box-sizing: border-box;
+    width: 200px;
+  }
+  .example {
+    border: 1px solid black;
+    box-sizing: border-box;
+    width: 200px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  button {
+    width: 100%;
+  }

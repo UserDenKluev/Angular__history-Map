@@ -1,0 +1,12 @@
+<div  #mapXY class="map_XY" [ngStyle]="{ 'width.px': mapXYWidth, 'height.px': mapXYHeight }">
+    <!-- <div class="map_XY_hidden" (window:resize)="ddd2()"> -->
+    <div class="map_XY_hidden" [ngStyle]="{
+        'width.px': fieldWidth,
+        'height.px': fieldHeight,
+        'top.px': -contentY,
+        'left.px': -contentX
+    }" (window:resize)="windowResizing()">
+        <div #boxXY (cdkDragMoved)="eventDND_XY($event)" [cdkDragFreeDragPosition]="PositionXY" class="boxXY box" cdkDragBoundary=".map_XY_hidden" cdkDrag>
+        </div>
+    </div>
+</div>

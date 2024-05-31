@@ -1,0 +1,7 @@
+<div #mapY class="map_Y">
+    <div #mapYHidden class="map_Y_hidden">
+        <div #boxY (cdkDragMoved)="eventDND_Y($event)" class="boxY box" cdkDragLockAxis="y" 
+        [cdkDragFreeDragPosition]="PositionY" cdkDragBoundary=".map_Y_hidden" cdkDrag>
+        </div>
+    </div>
+</div>

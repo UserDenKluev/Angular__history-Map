@@ -1,0 +1,48 @@
+input {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.example {
+  border: 1px solid black;
+  box-sizing: border-box;
+  width: 200px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  width: 100%;
+}
+
+textarea {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+h2 {
+  text-align: center;
+  width: 200px;
+  margin: auto;
+  color: red;
+}
+
+.title {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100px;
+  max-height: 100px;
+}
+
+.text {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100px;
+  max-height: 440px;
+}

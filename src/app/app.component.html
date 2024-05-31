@@ -1,0 +1,11 @@
+<div class="app-site"  *ngIf="this.allSite.siteLoadingCountries && this.allSite.siteLoadingEvents;else unset">
+    <app-instruments></app-instruments>
+    <app-map></app-map>
+</div>
+
+<ng-template #unset>  
+    <div class="lodding">
+        <h2>Загрузка...</h2>
+        <p>Прошу прощения.<br>Сервер с БД бесплатный и медленный.<br>Скоро сайт заработает.</p>
+    </div>
+</ng-template>   

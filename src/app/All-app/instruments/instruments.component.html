@@ -1,0 +1,214 @@
+<div class="instrumentActive" [@openClose]="this.allSite.isOpenInstrument ? 'open' : 'close'" >
+    <div class="instrument">
+
+      <div *ngIf="allSite.isPasserby" class="comeIn" >
+
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Авторизация
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+
+        <!-----------------------------------------------------------------------------
+              ВОЙТИ
+        ------------------------------------------------------------------------------->
+          <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Войти
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+
+              <form [formGroup]="loginForm" (ngSubmit)="comeIn()">
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>Email</mat-label>
+                  <input matInput formControlName="email" type="text">
+                  <mat-error *ngIf="loginForm.get('email')?.invalid && this.loginForm.get('email')?.touched">Email обязателен</mat-error>
+                </mat-form-field>
+                
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>Пароль</mat-label>
+                  <input matInput formControlName="password" type="password">
+                  <mat-error *ngIf="loginForm.get('password')?.invalid && this.loginForm.get('password')?.touched">Пароль обязателен</mat-error>
+                </mat-form-field>
+                <div>
+                  Ведите эти email и пароль для входа от имени администратора <br><br>
+                  <strong>Email:</strong> string@ddd<br>
+                  <strong>Пароль:</strong> string
+                </div>
+
+
+                <button mat-raised-button [disabled]="loginForm.invalid" type="submit">Войти</button>
+              </form>
+            </mat-expansion-panel>            
+          
+          <!-----------------------------------------------------------------------------
+            Регистрация
+          ------------------------------------------------------------------------------->
+         
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Регистрация
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+
+              <form [formGroup]="registrationForm" (ngSubmit)="registration()">
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>Email</mat-label>
+                  <input matInput formControlName="email" type="text">
+                  <mat-error *ngIf="registrationForm.get('email')?.invalid && this.registrationForm.get('email')?.touched">Email обязателен</mat-error>
+                </mat-form-field>
+                
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>Пароль</mat-label>
+                  <input matInput formControlName="password" type="text">
+                  <mat-error *ngIf="this.registrationForm.get('password')?.touched">Пароль обязателен</mat-error>
+                </mat-form-field>
+                <button mat-raised-button [disabled]="registrationForm.invalid" type="submit">Зарегестрироваться</button>
+              </form>
+            </mat-expansion-panel>            
+          </mat-accordion>
+
+          </mat-expansion-panel>            
+        </mat-accordion>
+      </div>
+
+      <div class="adminOrUser" *ngIf="allSite.isUser || allSite.isAmin">
+        <div>{{allSite.hello}}</div>
+        <button mat-raised-button (click)="output()" class="output">Выйти</button>
+      </div>
+
+      <div *ngIf="allSite.isAmin" class="adminEditor" >
+        <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Изменить карту
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+
+              <mat-accordion>
+
+                <!------------------------------------------------------
+                  ------------------------------------------------------ 
+                  Добавить
+                 ------------------------------------------------------
+                  ----------------------------------------------------->
+                  <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        Добавить
+                      </mat-panel-title>
+                    </mat-expansion-panel-header>
+
+                    <button mat-raised-button (click)="addCountry()">Страну</button><br>
+                    <button mat-raised-button (click)="addEvent()">Событие</button>
+                  </mat-expansion-panel>
+                  
+                  <!------------------------------------------------------
+                  ------------------------------------------------------ 
+                  Редактировать
+                 ------------------------------------------------------
+                  ----------------------------------------------------->
+                  <mat-expansion-panel>
+                      <mat-expansion-panel-header>
+                          <mat-panel-title>
+                            Редактировать
+                          </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <button mat-raised-button (click)="editContry()">Страну</button><br>
+                        <button mat-raised-button (click)="editEvent()">Событие</button>
+                  </mat-expansion-panel>
+      
+                  <!------------------------------------------------------
+                  ------------------------------------------------------ 
+                  Удалить
+                 ------------------------------------------------------
+                  ----------------------------------------------------->
+                  <mat-expansion-panel>
+                      <mat-expansion-panel-header>
+                          <mat-panel-title>
+                            Удалить
+                          </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <button mat-raised-button (click)="deleteContry()">Страну</button><br>
+                        <button mat-raised-button (click)="deleteEvent()">Событие</button>
+                  </mat-expansion-panel>
+                </mat-accordion>
+            </mat-expansion-panel>            
+          </mat-accordion>
+      </div>
+
+      <div *ngIf="allSite.isUser" class="UserBlock" >
+      <!-- <div class="UserBlock" > -->
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Предложить изменение
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <form [formGroup]="offerForm" (ngSubmit)="offerSend()" class="example-form">
+              <mat-form-field class="example-full-width" appearance="fill">
+                <textarea matInput formControlName="offer"></textarea>
+                <!-- <mat-error *ngIf="loginForm.get('password')?.invalid && this.loginForm.get('password')?.touched">Пароль обязателен</mat-error> -->
+              </mat-form-field>
+  
+              <button mat-raised-button [disabled]="offerForm.invalid" type="submit">Отправить предложение</button>
+            </form>
+            
+            </mat-expansion-panel>            
+          </mat-accordion>
+      </div>
+      
+      <div class="AdminBlock" *ngIf="allSite.isAmin">
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Посмотреть прделожения
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <button mat-raised-button (click)="allSite.getOffrs()">Обновить</button>
+            <!-- тут начинается -->
+            <mat-accordion>
+              <!-- дублирование -->
+              <mat-expansion-panel *ngFor="let i of allSite.offers; let iMas = index">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    {{i.login}}
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                {{i.offers}}
+                <button mat-raised-button (click)="allSite.deleteOffer(i.id, iMas)">Удалить</button>
+              </mat-expansion-panel>            
+            </mat-accordion>
+            </mat-expansion-panel>
+          </mat-accordion>
+      </div>
+          
+      <div class="search">
+        <mat-accordion>
+          <!-- <mat-expansion-panel expanded="true"> -->
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Фильрация
+              </mat-panel-title>
+              <mat-panel-description>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <app-search></app-search>
+          </mat-expansion-panel>
+        </mat-accordion>
+
+
+        
+      </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+.app-site {
+    display: flex;
+    height: 100%;
+}
+
+.lodding {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}

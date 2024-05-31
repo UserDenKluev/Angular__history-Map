@@ -1,0 +1,29 @@
+/* .mat-form-field {
+    width: 100%;
+} */
+.mat-chip {
+    height: auto;
+}
+.yearSearchDiv div {
+    position: relative;
+    box-sizing: border-box;
+}
+.divYearInput {
+    display: flex;
+    justify-content: space-between;
+}
+.divYearSlider {
+    margin: auto;
+    width: 180px;
+    display: flex;
+    justify-content: space-between;
+}
+.sl1, .sl2 {
+    min-height: 300px;
+}
+.mat-form-field {
+    width: 110px;
+}
+.example-chip-list {
+    width: 100%;
+}

@@ -1,0 +1,38 @@
+<div> 
+    <form (ngSubmit)="addEventForm()" #form="ngForm">
+        <mat-form-field appearance="fill">
+            <mat-label>Выберите страну</mat-label>
+            <mat-select [formControl]="CountryControl" required>
+              <mat-option *ngFor="let country of this.allSite.saveCountries" [value]="country">
+                {{country.name}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="CountryControl.hasError('required')">Пожалуйста, выберите страну</mat-error>
+        </mat-form-field>
+
+          <br>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>год</mat-label>
+            <input name="year" matInput type="number" [(ngModel)]="yearEvent" placeholder="Введите год события"><br>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Выберите эру</mat-label>
+            <mat-select [(value)]="selected" required>
+              <mat-option value='after'>Нашей эры</mat-option>
+              <mat-option value='before'>До нашей эры</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <textarea matInput name="title" class="title" [(ngModel)]="titleEvent" placeholder="Введите заголовок события"></textarea><br>
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <textarea matInput name="content" class="text" [(ngModel)]="contentEvent" placeholder="Введите текст события"></textarea>
+          </mat-form-field>
+          <br>
+        <button mat-raised-button type="submit">Создать событие</button>
+        <h2>{{Error}}</h2>
+    </form>
+
+</div>

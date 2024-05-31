@@ -1,0 +1,31 @@
+<div> 
+    <form (ngSubmit)="addCountryForm(form)" #form="ngForm">
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Страна</mat-label>
+            <input matInput type="text" ngModel name="text" [(ngModel)]="country" value="Название" placeholder="Введите название страны">
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Цвет фона</mat-label>
+            <input matInput type="color" ngModel name="backColor" [(ngModel)]="backColor" placeholder="Цвет фона"><br>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Цвет текста</mat-label>
+            <input matInput type="color" ngModel name="textColor" [(ngModel)]="textColor" placeholder="Цвет текста"><br>
+        </mat-form-field>
+
+
+        <div class="example"
+            [ngStyle]="{
+                'backgroundColor': backColor,
+                'color': textColor
+            }"
+            >{{country}}
+        </div>
+        <button mat-raised-button type="submit">Создать страну</button>
+
+    </form>
+
+</div>

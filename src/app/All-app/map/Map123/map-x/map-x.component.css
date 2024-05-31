@@ -1,0 +1,59 @@
+:host {
+    width: 100%;
+    height: 70px;
+    box-sizing: border-box;
+    display: flex;
+}
+.map_X {
+    background: black;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.map_X_hidden {
+    position: relative;
+    height: 70px;
+}
+.boxX {
+    /* border-bottom: 5px solid #1fbfb8; */
+    border-bottom: 5px solid white;
+    cursor: grab; 
+    height: 100%;
+    background: #031163;
+}
+.divBoxX {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+}
+.country {
+    height: 100%;
+    width: 200px;
+    box-sizing: border-box;
+    /* flex-grow: 0;
+    flex-shrink: 0; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+.animateEdit {
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-name: slidein;
+}
+@keyframes slidein {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+  }
