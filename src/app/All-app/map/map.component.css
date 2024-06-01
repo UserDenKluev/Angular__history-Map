@@ -1,20 +1,24 @@
 :host {
     flex: 1 0 auto;
 }
+
 .map {
     height: 100%;
     width: 100%;
     display: flex;
 }
+
 .map-left {
     display: flex;
     flex-direction: column;
 }
+
 .map-right {
     flex: 1 0 auto;
     display: flex;
     flex-direction: column;
 }
+
 /* .btnInstrument {
     width: 70px;
     height: 70px;
@@ -26,18 +30,16 @@
     border-radius: unset;
     font-size: 50px;
 } */
-
 .btnInstrument {
     box-sizing: border-box;
     width: 70px;
     height: 70px;
     border-bottom: 5px solid #1fbfb8;
     border-right: 5px solid #1fbfb8;
-    /* border-bottom: 5px solid white;
-    border-right: 5px solid white; */
     position: relative;
     cursor: pointer;
 }
+
 .btnInstrument::before,
 .btnInstrument::after,
 .btnInstrument span {
@@ -51,12 +53,15 @@
     border-radius: 3px;
     transition: all 0.5s
 }
+
 .btnInstrument span {
     top: 30px;
 }
+
 .btnInstrument::before {
     top: 15px;
 }
+
 .btnInstrument::after {
     bottom: 15px;
 }

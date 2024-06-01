@@ -1,0 +1,67 @@
+[debug] [2024-06-01T19:39:55.414Z] ----------------------------------------------------------------------
+[debug] [2024-06-01T19:39:55.416Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Denis\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-06-01T19:39:55.417Z] CLI Version:   13.10.2
+[debug] [2024-06-01T19:39:55.417Z] Platform:      win32
+[debug] [2024-06-01T19:39:55.417Z] Node Version:  v20.11.0
+[debug] [2024-06-01T19:39:55.417Z] Time:          Sat Jun 01 2024 22:39:55 GMT+0300 (Москва, стандартное время)
+[debug] [2024-06-01T19:39:55.417Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-06-01T19:39:55.420Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2024-06-01T19:39:55.466Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-06-01T19:39:55.467Z] > authorizing via signed-in user (kluev1179@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Denis\Desktop\git\history-map\Angular__history-Map
+
+[debug] [2024-06-01T19:39:55.825Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2024-06-01T19:39:55.826Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-06-01T19:40:56.699Z] ----------------------------------------------------------------------
+[debug] [2024-06-01T19:40:56.702Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Denis\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-06-01T19:40:56.702Z] CLI Version:   13.10.2
+[debug] [2024-06-01T19:40:56.702Z] Platform:      win32
+[debug] [2024-06-01T19:40:56.702Z] Node Version:  v20.11.0
+[debug] [2024-06-01T19:40:56.702Z] Time:          Sat Jun 01 2024 22:40:56 GMT+0300 (Москва, стандартное время)
+[debug] [2024-06-01T19:40:56.702Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-06-01T19:40:56.708Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-06-01T19:40:56.709Z] > authorizing via signed-in user (kluev1179@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Denis\Desktop\git\history-map\Angular__history-Map
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-06-01T19:43:08.936Z] > refreshing access token with scopes: []
+[debug] [2024-06-01T19:43:08.938Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-06-01T19:43:08.938Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-06-01T19:43:09.057Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2024-06-01T19:43:09.058Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-06-01T19:43:09.063Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2024-06-01T19:43:09.515Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2024-06-01T19:43:09.515Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]

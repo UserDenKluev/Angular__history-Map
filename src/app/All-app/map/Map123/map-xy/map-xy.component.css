@@ -2,39 +2,45 @@
     width: 100%;
     flex: 1 0 auto;
 }
+
+
+
 .map_XY {
     width: 100%;
     height: 100%;
     overflow: hidden;
 }
+
 .map_XY_hidden {
     position: relative;
     width: 0px;
     height: 0px;
 }
+
 .boxXY {
     cursor: grab;
-    /* background: #031163 !important; */
-    background: linear-gradient(180deg, rgba(3,17,99,1) 0%, rgba(31,191,184,1) 100%);
-    /* background: rgba(31,191,184,1) !important; */
-
+    background: linear-gradient(180deg, rgba(3, 17, 99, 1) 0%, rgba(31, 191, 184, 1) 100%);
     position: absolute;
     display: block;
 }
+
 .boxXY:active {
     cursor: grabbing;
 }
+
 .divYear {
     box-sizing: border-box;
     display: flex;
     border-top: 1px solid white;
 }
+
 .divCountry {
     box-sizing: border-box;
     width: 200px;
     /* flex-grow: 0;
     flex-shrink: 0; */
 }
+
 .divEvent {
     width: 200px;
     position: relative;
@@ -47,27 +53,33 @@
     transition: 0.5s;
     top: 0;
 }
+
 .divEvent:hover {
     top: -5px;
     box-shadow: 5px 5px 5px white;
 }
+
 .divBoxXY {
     width: 100%;
     height: 100%;
 }
+
 .animateEdit {
     animation-duration: 1s;
     animation-iteration-count: infinite;
     animation-name: slidein;
 }
+
 @keyframes slidein {
     0% {
         opacity: 1;
     }
+
     50% {
         opacity: 0.5;
     }
+
     100% {
         opacity: 1;
     }
-  }
+}

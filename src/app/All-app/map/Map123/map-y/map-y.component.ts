@@ -18,8 +18,10 @@ export class MapYComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     setTimeout(() => {
       this.boxXYService.loadingBoxXY.subscribe(() => {
-        this.mapY.nativeElement.style.height = this.boxXYService.mapXYHeight + 'px';
-        this.mapYHidden.nativeElement.style.height = this.boxXYService.fieldHeight + 'px';
+        this.mapY
+        .nativeElement.style.height = this.boxXYService.mapXYHeight + 'px';
+        this.mapYHidden
+        .nativeElement.style.height = this.boxXYService.fieldHeight + 'px';
         this.boxY.nativeElement.style.height = this.boxXYService.boxXYHeight + 'px';
         this.mapYHidden.nativeElement.style.top = (-(this.boxXYService.contentY)) + 'px';
         this.PositionY = {x: 0, y: this.boxXYService.contentY};
